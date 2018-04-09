@@ -6,7 +6,7 @@ defmodule ExTaxjar do
   """
 
   def process_url(url) do
-    "https://api.taxjar.com/v2" <> url
+    Application.get_env(:ex_taxjar, :end_point) <> url
   end
 
   def process_response_body(body) do
