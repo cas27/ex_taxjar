@@ -8,7 +8,7 @@ use Mix.Config
 # if you want to provide default values for your application for
 # 3rd-party users, it should be done in your "mix.exs" file.
 
- config :ex_taxjar, api_key: System.get_env("TAX_JAR_APIKEY") || ""
+ config :ex_taxjar, api_key: System.get_env("TAX_JAR_APIKEY")
 #
 # and access this configuration in your application as:
 #
