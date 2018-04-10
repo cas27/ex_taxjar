@@ -1,0 +1,30 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "<<access_key>>"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.sandbox.taxjar.com/v2/rates/10115?country=DE"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"rate\":{\"country\":\"DE\",\"name\":\"Germany\",\"standard_rate\":\"0.19\",\"reduced_rate\":null,\"super_reduced_rate\":null,\"parking_rate\":null,\"distance_sale_threshold\":null,\"freight_taxable\":true}}",
+      "headers": {
+        "Date": "Tue, 10 Apr 2018 15:56:49 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "185",
+        "Connection": "keep-alive",
+        "Server": "nginx/1.10.3 (Ubuntu)",
+        "Vary": "Origin",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.010596"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "<<access_key>>"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.sandbox.taxjar.com/v2/rates/90210"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"rate\":{\"zip\":\"90210\",\"state\":\"CA\",\"state_rate\":\"0.0625\",\"county\":\"LOS ANGELES\",\"county_rate\":\"0.01\",\"city\":\"WESTLAKE\",\"city_rate\":\"0.0\",\"combined_district_rate\":\"0.0225\",\"combined_rate\":\"0.095\",\"freight_taxable\":false}}",
+      "headers": {
+        "Date": "Tue, 10 Apr 2018 15:44:52 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "221",
+        "Connection": "keep-alive",
+        "Server": "nginx/1.10.3 (Ubuntu)",
+        "Vary": "Origin",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.012451"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
