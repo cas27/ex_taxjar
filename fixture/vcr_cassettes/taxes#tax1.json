@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "{\"amount\":100,\"from_city\":\"Beverly Hills\",\"from_country\":\"US\",\"from_state\":\"CA\",\"from_street\":\"123 Water St\",\"from_zip\":\"90210\",\"shipping\":15,\"to_city\":\"Los Angeles\",\"to_country\":\"US\",\"to_state\":\"CA\",\"to_street\":\"1335 E 103rd St\",\"to_zip\":\"90002\"}",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "<<access_key>>"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.sandbox.taxjar.com/v2/taxes"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"tax\":{\"order_total_amount\":115.0,\"shipping\":15.0,\"taxable_amount\":100.0,\"amount_to_collect\":9.5,\"rate\":0.095,\"has_nexus\":true,\"freight_taxable\":false,\"tax_source\":\"destination\"}}",
+      "headers": {
+        "Date": "Tue, 10 Apr 2018 20:53:45 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "180",
+        "Connection": "keep-alive",
+        "Server": "nginx/1.10.3 (Ubuntu)",
+        "Vary": "Origin",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.019775"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
