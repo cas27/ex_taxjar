@@ -1,4 +1,5 @@
 # ExTaxjar
+[![Build Status](https://travis-ci.org/cas27/ex_taxjar.svg?branch=master)](https://travis-ci.org/cas27/ex_taxjar)
 
 **TODO: Add description**
 
