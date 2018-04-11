@@ -48,4 +48,24 @@ defmodule ExTaxjar.TransactionsTest do
       end
     end
   end
+
+  describe "ExTaxjar.Transactions.update_transaction/1" do
+    test "update transaction order" do
+      use_cassette "transactions#update_transaction" do
+        transaction = %Transaction{
+          transaction_id: "123",
+          transaction_date: "1999/01/01",
+          to_country: "US",
+          to_zip: "90210",
+          to_state: "CA",
+          amount: 39.99,
+          shipping: 4.99,
+          sales_tax: 1.19
+        }
+
+        resp = Transactions.update_transaction(transaction)
+        assert resp["amount"] == "39.99"
+      end
+    end
+  end
 end

@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "{\"amount\":39.99,\"from_city\":null,\"from_country\":null,\"from_state\":null,\"from_street\":null,\"from_zip\":null,\"line_items\":[],\"sales_tax\":1.19,\"shipping\":4.99,\"to_city\":null,\"to_country\":\"US\",\"to_state\":\"CA\",\"to_street\":null,\"to_zip\":\"90210\",\"transaction_date\":\"1999/01/01\",\"transaction_id\":\"123\"}",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "<<access_key>>"
+      },
+      "method": "put",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.sandbox.taxjar.com/v2/transactions/orders/123"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"order\":{\"transaction_id\":\"123\",\"user_id\":17108,\"transaction_date\":\"1999-01-01T00:00:00.000Z\",\"transaction_reference_id\":null,\"from_country\":\"US\",\"from_zip\":\"\",\"from_state\":null,\"from_city\":null,\"from_street\":null,\"to_country\":\"US\",\"to_zip\":\"90210\",\"to_state\":\"CA\",\"to_city\":null,\"to_street\":null,\"amount\":\"39.99\",\"shipping\":\"4.99\",\"sales_tax\":\"1.19\",\"line_items\":[]}}",
+      "headers": {
+        "Date": "Wed, 11 Apr 2018 22:22:16 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "369",
+        "Connection": "keep-alive",
+        "Server": "nginx/1.10.3 (Ubuntu)",
+        "Vary": "Origin",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.010774"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

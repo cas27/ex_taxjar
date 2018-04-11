@@ -30,4 +30,13 @@ defmodule ExTaxjar.Transactions do
     {:ok, %{body: body}} = ExTaxjar.get("/transactions/orders/#{id}")
     body["order"]
   end
+
+  def update_transaction(transaction = %{transaction_id: id}) do
+    {:ok, %{body: body}} =
+      ExTaxjar.put("/transactions/orders/#{id}", JSX.encode!(transaction), [
+        {"Content-Type", "application/json"}
+      ])
+
+    body["order"]
+  end
 end
