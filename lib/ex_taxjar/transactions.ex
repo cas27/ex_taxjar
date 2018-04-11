@@ -16,4 +16,9 @@ defmodule ExTaxjar.Transactions do
 
     body["orders"]
   end
+
+  def order(id) do
+    {:ok, %{body: body}} = ExTaxjar.get("/transactions/orders/#{id}")
+    body["order"]
+  end
 end
