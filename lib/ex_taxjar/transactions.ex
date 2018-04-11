@@ -1,47 +1,57 @@
 defmodule ExTaxjar.Transactions do
-  def create_transaction(transaction) do
-    {:ok, %{body: body}} =
-      ExTaxjar.post("/transactions/orders", JSX.encode!(transaction), [
-        {"Content-Type", "application/json"}
-      ])
+  defmacro __using__(resource: resource) do
+    resources = resource <> "s"
 
-    body["order"]
-  end
+    quote do
+      def create(transaction) do
+        {:ok, %{body: body}} =
+          ExTaxjar.post("/transactions/#{unquote(resources)}", JSX.encode!(transaction), [
+            {"Content-Type", "application/json"}
+          ])
 
-  def delete_transaction(id) do
-    {:ok, %{body: body}} = ExTaxjar.delete("/transactions/orders/#{id}")
-    body["order"]
-  end
+        body[unquote(resource)]
+      end
 
-  def list(%{from_date: from_date, to_date: to_date}) do
-    {:ok, %{body: body}} =
-      ExTaxjar.get(
-        "/transactions/orders",
-        [],
-        params: %{from_transaction_date: from_date, to_transaction_date: to_date}
-      )
+      def delete(id) do
+        {:ok, %{body: body}} = ExTaxjar.delete("/transactions/#{unquote(resources)}/#{id}")
+        body[unquote(resource)]
+      end
 
-    body["orders"]
-  end
+      def list(%{from_date: from_date, to_date: to_date}) do
+        {:ok, %{body: body}} =
+          ExTaxjar.get(
+            "/transactions/#{unquote(resources)}",
+            [],
+            params: %{from_transaction_date: from_date, to_transaction_date: to_date}
+          )
 
-  def list(%{on_date: on_date}) do
-    {:ok, %{body: body}} =
-      ExTaxjar.get("/transactions/orders", [], params: %{transaction_date: on_date})
+        body[unquote(resources)]
+      end
 
-    body["orders"]
-  end
+      def list(%{on_date: on_date}) do
+        {:ok, %{body: body}} =
+          ExTaxjar.get(
+            "/transactions/#{unquote(resources)}",
+            [],
+            params: %{transaction_date: on_date}
+          )
 
-  def order(id) do
-    {:ok, %{body: body}} = ExTaxjar.get("/transactions/orders/#{id}")
-    body["order"]
-  end
+        body[unquote(resources)]
+      end
 
-  def update_transaction(transaction = %{transaction_id: id}) do
-    {:ok, %{body: body}} =
-      ExTaxjar.put("/transactions/orders/#{id}", JSX.encode!(transaction), [
-        {"Content-Type", "application/json"}
-      ])
+      def show(id) do
+        {:ok, %{body: body}} = ExTaxjar.get("/transactions/#{unquote(resources)}/#{id}")
+        body["order"]
+      end
 
-    body["order"]
+      def update(transaction = %{transaction_id: id}) do
+        {:ok, %{body: body}} =
+          ExTaxjar.put("/transactions/#{unquote(resources)}/#{id}", JSX.encode!(transaction), [
+            {"Content-Type", "application/json"}
+          ])
+
+        body[unquote(resource)]
+      end
+    end
   end
 end
