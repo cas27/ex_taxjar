@@ -14,7 +14,7 @@ defmodule ExTaxjar.RatesTest do
 
   test "rate/2 with optional params" do
     use_cassette "rates#rate2" do
-      rate = Rates.rate("82003", params: %{state: "WY", city: "Cheyenne"})
+      rate = Rates.rate("82003", %{state: "WY", city: "Cheyenne"})
       assert rate["combined_rate"] == "0.06"
       assert rate["state"] == "WY"
     end
@@ -22,7 +22,7 @@ defmodule ExTaxjar.RatesTest do
 
   test "rate/2 for Germany" do
     use_cassette "rates#germany" do
-      rate = Rates.rate("10115", params: %{country: "DE"})
+      rate = Rates.rate("10115", %{country: "DE"})
       assert rate["name"] == "Germany"
       assert rate["standard_rate"] == "0.19"
     end
