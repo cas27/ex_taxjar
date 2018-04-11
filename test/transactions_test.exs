@@ -2,7 +2,7 @@ defmodule ExTaxjar.TransactionsTest do
   use ExUnit.Case
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
-  alias ExTaxjar.Transactions
+  alias ExTaxjar.{Transactions, Transaction}
 
   describe "ExTaxjar.Transactions.list/1" do
     # I'm assuming this has not been implemented in the sandbox yet or has a bug
@@ -25,6 +25,26 @@ defmodule ExTaxjar.TransactionsTest do
       use_cassette "transactions#order" do
         order = Transactions.order("123")
         assert order["amount"] == "29.94"
+      end
+    end
+  end
+
+  describe "ExTaxjar.Transactions.create_transaction/1" do
+    test "creates a new order transaction" do
+      use_cassette "transactions#create_transaction" do
+        transaction = %Transaction{
+          transaction_id: "1999",
+          transaction_date: "1999/01/01",
+          to_country: "US",
+          to_zip: "90210",
+          to_state: "CA",
+          amount: 19.99,
+          shipping: 4.99,
+          sales_tax: 1.19
+        }
+
+        resp = Transactions.create_transaction(transaction)
+        assert resp["transaction_id"] == "1999"
       end
     end
   end

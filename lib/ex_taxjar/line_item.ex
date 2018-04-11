@@ -4,6 +4,10 @@ defmodule ExTaxjar.LineItem do
     quantity: nil,
     product_tax_code: nil,
     unit_price: nil,
-    discount: nil
+    discount: nil,
+    # Transaction API
+    product_identifier: nil,
+    description: nil,
+    sales_tax: nil
   )
 end

@@ -1,4 +1,13 @@
 defmodule ExTaxjar.Transactions do
+  def create_transaction(transaction) do
+    {:ok, %{body: body}} =
+      ExTaxjar.post("/transactions/orders", JSX.encode!(transaction), [
+        {"Content-Type", "application/json"}
+      ])
+
+    body["order"]
+  end
+
   def list(%{from_date: from_date, to_date: to_date}) do
     {:ok, %{body: body}} =
       ExTaxjar.get(
