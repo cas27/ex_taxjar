@@ -68,4 +68,15 @@ defmodule ExTaxjar.TransactionsTest do
       end
     end
   end
+
+  describe "ExTaxjar.Transactions.delete_transaction/1" do
+    test "delete transaction order" do
+      use_cassette "transactions#delete_transaction" do
+        resp = Transactions.delete_transaction("123")
+        assert resp["amount"] == nil
+        assert resp["to_country"] == nil
+        assert resp["transaction_id"] == "123"
+      end
+    end
+  end
 end

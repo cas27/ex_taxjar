@@ -8,6 +8,11 @@ defmodule ExTaxjar.Transactions do
     body["order"]
   end
 
+  def delete_transaction(id) do
+    {:ok, %{body: body}} = ExTaxjar.delete("/transactions/orders/#{id}")
+    body["order"]
+  end
+
   def list(%{from_date: from_date, to_date: to_date}) do
     {:ok, %{body: body}} =
       ExTaxjar.get(
