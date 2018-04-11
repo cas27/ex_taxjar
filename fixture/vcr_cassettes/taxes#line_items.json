@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "{\"amount\":null,\"from_city\":\"Beverly Hills\",\"from_country\":\"US\",\"from_state\":\"CA\",\"from_street\":\"123 Water St\",\"from_zip\":\"90210\",\"line_items\":[{\"discount\":null,\"id\":1,\"product_tax_code\":\"20010\",\"quantity\":11,\"unit_price\":10}],\"shipping\":15,\"to_city\":\"Los Angeles\",\"to_country\":\"US\",\"to_state\":\"CA\",\"to_street\":\"1335 E 103rd St\",\"to_zip\":\"90002\"}",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "<<access_key>>"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.sandbox.taxjar.com/v2/taxes"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"tax\":{\"order_total_amount\":125.0,\"shipping\":15.0,\"taxable_amount\":110.0,\"amount_to_collect\":10.45,\"rate\":0.095,\"has_nexus\":true,\"freight_taxable\":false,\"tax_source\":\"destination\",\"breakdown\":{\"taxable_amount\":110.0,\"tax_collectable\":10.45,\"combined_tax_rate\":0.095,\"state_taxable_amount\":110.0,\"state_tax_rate\":0.0625,\"state_tax_collectable\":6.88,\"county_taxable_amount\":110.0,\"county_tax_rate\":0.01,\"county_tax_collectable\":1.1,\"city_taxable_amount\":0.0,\"city_tax_rate\":0.0,\"city_tax_collectable\":0.0,\"special_district_taxable_amount\":110.0,\"special_tax_rate\":0.0225,\"special_district_tax_collectable\":2.48,\"line_items\":[{\"id\":\"1\",\"taxable_amount\":110.0,\"tax_collectable\":10.45,\"combined_tax_rate\":0.095,\"state_taxable_amount\":110.0,\"state_sales_tax_rate\":0.0625,\"state_amount\":6.88,\"county_taxable_amount\":110.0,\"county_tax_rate\":0.01,\"county_amount\":1.1,\"city_taxable_amount\":0.0,\"city_tax_rate\":0.0,\"city_amount\":0.0,\"special_district_taxable_amount\":110.0,\"special_tax_rate\":0.0225,\"special_district_amount\":2.48}]}}}",
+      "headers": {
+        "Date": "Wed, 11 Apr 2018 15:13:10 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "1024",
+        "Connection": "keep-alive",
+        "Server": "nginx/1.10.3 (Ubuntu)",
+        "Vary": "Origin",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.022189"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
