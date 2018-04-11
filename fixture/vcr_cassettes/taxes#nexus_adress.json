@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "{\"amount\":200,\"from_city\":null,\"from_country\":null,\"from_state\":null,\"from_street\":null,\"from_zip\":null,\"line_items\":[],\"nexus_adresses\":[{\"city\":\"Washington\",\"country\":\"US\",\"id\":\"The White House\",\"state\":\"DC\",\"street\":\"1600 Pennsylvania Ave NW\",\"zip\":\"20500\"}],\"shipping\":35,\"to_city\":\"Los Angeles\",\"to_country\":\"US\",\"to_state\":\"CA\",\"to_street\":\"1335 E 103rd St\",\"to_zip\":\"90002\"}",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "<<access_key>>"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.sandbox.taxjar.com/v2/taxes"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"tax\":{\"order_total_amount\":235.0,\"shipping\":35.0,\"taxable_amount\":200.0,\"amount_to_collect\":19.0,\"rate\":0.095,\"has_nexus\":true,\"freight_taxable\":false,\"tax_source\":\"destination\"}}",
+      "headers": {
+        "Date": "Wed, 11 Apr 2018 15:50:57 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "181",
+        "Connection": "keep-alive",
+        "Server": "nginx/1.10.3 (Ubuntu)",
+        "Vary": "Origin",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.021469"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

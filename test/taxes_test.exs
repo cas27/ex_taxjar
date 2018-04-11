@@ -2,7 +2,7 @@ defmodule ExTaxjar.TaxesTest do
   use ExUnit.Case
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
-  alias ExTaxjar.{Taxes, Order, LineItem}
+  alias ExTaxjar.{Taxes, Order, LineItem, NexusAddress}
 
   test "tax/1" do
     use_cassette "taxes#tax1" do
@@ -45,6 +45,33 @@ defmodule ExTaxjar.TaxesTest do
 
       tax = Taxes.tax(order)
       assert tax["amount_to_collect"] == 10.45
+    end
+  end
+
+  test "tax/1 with nexus address instead of from address" do
+    use_cassette "taxes#nexus_adress" do
+      order = %Order{
+        to_country: "US",
+        to_zip: "90002",
+        to_state: "CA",
+        to_city: "Los Angeles",
+        to_street: "1335 E 103rd St",
+        amount: 200,
+        shipping: 35,
+        nexus_adresses: [
+          %NexusAddress{
+            id: "The White House",
+            country: "US",
+            zip: "20500",
+            state: "DC",
+            city: "Washington",
+            street: "1600 Pennsylvania Ave NW"
+          }
+        ]
+      }
+
+      tax = Taxes.tax(order)
+      assert tax["amount_to_collect"] == 19.0
     end
   end
 end

@@ -14,6 +14,7 @@ defmodule ExTaxjar.Order do
     to_street: nil,
     amount: nil,
     shipping: nil,
-    line_items: []
+    line_items: [],
+    nexus_adresses: []
   )
 end
