@@ -32,6 +32,7 @@ defmodule ExTaxjar.MixProject do
     [
       {:httpoison, "~> 1.1"},
       {:exjsx, "~> 4.0"},
+      {:ex_doc, ">= 0.0.0", only: :dev},
       {:exvcr, "~> 0.10", only: :test}
     ]
   end
