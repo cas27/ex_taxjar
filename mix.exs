@@ -7,8 +7,8 @@ defmodule ExTaxjar.MixProject do
       version: "0.5.0",
       elixir: "~> 1.6",
       name: "ExTaxjar",
-      description: description()
-      package: package()
+      description: description(),
+      package: package(),
       start_permanent: Mix.env() == :prod,
       preferred_cli_env: [
         vcr: :test,
@@ -46,6 +46,5 @@ defmodule ExTaxjar.MixProject do
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/cas27/ex_taxjar"}
     ]
-    
   end
 end
