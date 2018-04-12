@@ -54,16 +54,10 @@ defmodule ExTaxjar.TransactionRefundTest do
   describe "ExTaxjar.TransactionRefund.update/1" do
     test "update transaction refund" do
       use_cassette "transactions#update_refund" do
-        refund = %Refund{
+        refund = %Refund.Update{
           transaction_id: "321",
           transaction_reference_id: "1999",
-          transaction_date: "1999/01/01",
-          to_country: "US",
-          to_zip: "90210",
-          to_state: "CA",
-          amount: 39.99,
-          shipping: 4.99,
-          sales_tax: 1.19
+          amount: 39.99
         }
 
         resp = TransactionRefund.update(refund)
