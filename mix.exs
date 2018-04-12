@@ -4,8 +4,11 @@ defmodule ExTaxjar.MixProject do
   def project do
     [
       app: :ex_taxjar,
-      version: "0.1.0",
+      version: "0.5.0",
       elixir: "~> 1.6",
+      name: "ExTaxjar",
+      description: description()
+      package: package()
       start_permanent: Mix.env() == :prod,
       preferred_cli_env: [
         vcr: :test,
@@ -31,5 +34,18 @@ defmodule ExTaxjar.MixProject do
       {:exjsx, "~> 4.0"},
       {:exvcr, "~> 0.10", only: :test}
     ]
+  end
+
+  defp description do
+    "A client library for use with v2 of the TaxJar API"
+  end
+
+  defp package do
+    [
+      maintainers: ["Cory Schmitt"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/cas27/ex_taxjar"}
+    ]
+    
   end
 end
