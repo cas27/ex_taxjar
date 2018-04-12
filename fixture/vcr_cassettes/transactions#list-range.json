@@ -1,0 +1,30 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "<<access_key>>"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.sandbox.taxjar.com/v2/transactions/orders?from_transaction_date=2017%2F01%2F01&to_transaction_date=2017%2F01%2F31"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"orders\":[\"with_sales_tax_order\",\"default\"]}",
+      "headers": {
+        "Date": "Thu, 12 Apr 2018 17:56:53 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "45",
+        "Connection": "keep-alive",
+        "Server": "nginx/1.10.3 (Ubuntu)",
+        "Vary": "Origin",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.010471"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

@@ -6,13 +6,17 @@ defmodule ExTaxjar.TransactionOrderTest do
 
   describe "ExTaxjar.TransactionOrder.list/1" do
     test "with date range" do
-      orders = TransactionOrder.list(%{from_date: "2017/01/01", to_date: "2017/01/31"})
-      assert orders == ["with_sales_tax_order", "default"]
+      use_cassette "transactions#list-range" do
+        orders = TransactionOrder.list(%{from_date: "2017/01/01", to_date: "2017/01/31"})
+        assert orders == ["with_sales_tax_order", "default"]
+      end
     end
 
     test "with specific day" do
-      orders = TransactionOrder.list(%{on_date: "2017/01/31"})
-      assert orders == ["with_sales_tax_order", "default"]
+      use_cassette "transactions#list" do
+        orders = TransactionOrder.list(%{on_date: "2017/01/31"})
+        assert orders == ["with_sales_tax_order", "default"]
+      end
     end
   end
 
