@@ -1,0 +1,30 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "<<access_key>>"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.sandbox.taxjar.com/v2/transactions/refunds/321"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"refund\":{\"transaction_id\":\"321\",\"user_id\":2,\"transaction_date\":\"2016-09-20T00:00:00.000Z\",\"transaction_reference_id\":\"123A\",\"from_country\":\"US\",\"from_zip\":\"90210\",\"from_state\":\"CA\",\"from_city\":null,\"from_street\":null,\"to_country\":\"US\",\"to_zip\":\"90210\",\"to_state\":\"CA\",\"to_city\":null,\"to_street\":null,\"amount\":\"-29.94\",\"shipping\":\"-1.0\",\"sales_tax\":\"0.0\",\"line_items\":[{\"id\":0,\"quantity\":1,\"product_identifier\":null,\"product_tax_code\":\"31000\",\"description\":null,\"unit_price\":\"-19.99\",\"discount\":\"1.0\",\"sales_tax\":\"0.0\"},{\"id\":1,\"quantity\":1,\"product_identifier\":null,\"product_tax_code\":\"30070\",\"description\":null,\"unit_price\":\"-9.95\",\"discount\":\"2.0\",\"sales_tax\":\"0.0\"}]}}",
+      "headers": {
+        "Date": "Thu, 12 Apr 2018 14:51:05 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "673",
+        "Connection": "keep-alive",
+        "Server": "nginx/1.10.3 (Ubuntu)",
+        "Vary": "Origin",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.013644"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

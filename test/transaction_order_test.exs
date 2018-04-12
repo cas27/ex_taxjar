@@ -1,10 +1,10 @@
-defmodule ExTaxjar.TransactionsTest do
+defmodule ExTaxjar.TransactionOrderTest do
   use ExUnit.Case
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   alias ExTaxjar.{TransactionOrder, Transaction}
 
-  describe "ExTaxjar.Transactions.list/1" do
+  describe "ExTaxjar.TransactionOrder.list/1" do
     # I'm assuming this has not been implemented in the sandbox yet or has a bug
     @tag :skip
     test "with date range" do

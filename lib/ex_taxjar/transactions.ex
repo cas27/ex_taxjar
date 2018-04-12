@@ -41,7 +41,7 @@ defmodule ExTaxjar.Transactions do
 
       def show(id) do
         {:ok, %{body: body}} = ExTaxjar.get("/transactions/#{unquote(resources)}/#{id}")
-        body["order"]
+        body[unquote(resource)]
       end
 
       def update(transaction = %{transaction_id: id}) do

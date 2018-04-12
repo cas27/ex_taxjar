@@ -1,0 +1,30 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "<<access_key>>"
+      },
+      "method": "delete",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.sandbox.taxjar.com/v2/transactions/refunds/321"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"refund\":{\"transaction_id\":\"321\",\"user_id\":17108,\"transaction_date\":null,\"transaction_reference_id\":null,\"from_country\":null,\"from_zip\":null,\"from_state\":null,\"from_city\":null,\"from_street\":null,\"to_country\":null,\"to_zip\":null,\"to_state\":null,\"to_city\":null,\"to_street\":null,\"amount\":null,\"shipping\":null,\"sales_tax\":null,\"line_items\":[]}}",
+      "headers": {
+        "Date": "Thu, 12 Apr 2018 15:06:27 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "340",
+        "Connection": "keep-alive",
+        "Server": "nginx/1.10.3 (Ubuntu)",
+        "Vary": "Origin",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.020775"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
