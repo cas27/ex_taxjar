@@ -11,23 +11,9 @@ defmodule ExTaxjar.Refund do
     :to_state
   ]
 
-  defstruct(
+  use ExTaxjar.Order.Base,
     transaction_id: nil,
     transaction_reference_id: nil,
     transaction_date: nil,
-    from_country: nil,
-    from_zip: nil,
-    from_state: nil,
-    from_city: nil,
-    from_street: nil,
-    to_country: nil,
-    to_zip: nil,
-    to_state: nil,
-    to_city: nil,
-    to_street: nil,
-    amount: nil,
-    shipping: nil,
-    sales_tax: nil,
-    line_items: []
-  )
+    sales_tax: nil
 end
