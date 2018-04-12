@@ -1,0 +1,30 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "<<access_key>>"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.sandbox.taxjar.com/v2/nexus/regions"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"regions\":[{\"country_code\":\"US\",\"country\":\"United States\",\"region_code\":\"CA\",\"region\":\"California\"}]}",
+      "headers": {
+        "Date": "Thu, 12 Apr 2018 15:13:27 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "102",
+        "Connection": "keep-alive",
+        "Server": "nginx/1.10.3 (Ubuntu)",
+        "Vary": "Origin",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.011513"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
