@@ -5,18 +5,14 @@ defmodule ExTaxjar.TransactionOrderTest do
   alias ExTaxjar.{TransactionOrder, Transaction}
 
   describe "ExTaxjar.TransactionOrder.list/1" do
-    # I'm assuming this has not been implemented in the sandbox yet or has a bug
-    @tag :skip
     test "with date range" do
       orders = TransactionOrder.list(%{from_date: "2017/01/01", to_date: "2017/01/31"})
-      assert Enum.count(orders) == 2
+      assert orders == ["with_sales_tax_order", "default"]
     end
 
-    # I'm assuming this has not been implemented in the sandbox yet or has a bug
-    @tag :skip
     test "with specific day" do
       orders = TransactionOrder.list(%{on_date: "2017/01/31"})
-      assert Enum.count(orders) == 2
+      assert orders == ["with_sales_tax_order", "default"]
     end
   end
 

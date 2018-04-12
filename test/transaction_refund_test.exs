@@ -5,19 +5,14 @@ defmodule ExTaxjar.TransactionRefundTest do
   alias ExTaxjar.{TransactionRefund, Refund}
 
   describe "ExTaxjar.TransactionRefund.list/1" do
-    # I'm assuming this has not been implemented in the sandbox yet or has a bug
-    @tag :skip
     test "with date range" do
       refunds = TransactionRefund.list(%{from_date: "2017/01/01", to_date: "2017/01/31"})
-      IO.puts(inspect(refunds))
-      assert Enum.count(refunds) == 2
+      assert refunds == ["with_sales_tax_refund", "default"]
     end
 
-    # I'm assuming this has not been implemented in the sandbox yet or has a bug
-    @tag :skip
     test "with specific day" do
       refunds = TransactionRefund.list(%{on_date: "2017/01/31"})
-      assert Enum.count(refunds) == 2
+      assert refunds == ["with_sales_tax_refund", "default"]
     end
   end
 
